@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>gym</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<style type="text/css">
+    .home {
+        padding: 30px 0 200px 0;
+        background: url('ath.jpg') center center no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+    }
+
+    .rev3 {
+        font-family: 'Product sans', sans-serif;
+        font-size: 70px;
+        cursor: pointer;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 20px;
+        padding-bottom: 12px;
+        border: 0px solid #fff;
+        color: #fff;
+        transition: 1000ms;
+        text-align: center;
+    }
+
+    .rev1 {
+        font-family: 'Raleway', sans-serif;
+        font-size: 32px;
+        cursor: pointer;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 12px;
+        padding-bottom: 12px;
+        color: #fff;
+        transition: 1000ms;
+        border-radius: 40px;
+        opacity: 0.6%
+            /*box-shadow: 0 0 0 0 #13171c inset;*/
+    }
+
+    .rev2 {
+        font-family: 'Raleway', sans-serif;
+        font-size: 32px;
+        cursor: pointer;
+        padding-left: 20px;
+        padding- right: 20px;
+        padding-top: 12px;
+        padding-bottom: 12px;
+        color: #fff;
+        transition: 1000ms;
+        border-radius: 40px;
+        /*box-shadow: 0 0 0 0 #13171c inset;*/
+    }
+
+    .orgasm {
+        transition: 750ms;
+        box-shadow: 0 0 0 2px;
+        opacity: 1%;
+    }
+
+    .arrow {
+        width: 4em;
+        height: 4em;
+        transform: rotate(-45deg);
+        border-bottom: 4px solid #fff;
+        border-left: 4px solid #fff;
+        cursor: pointer;
+    }
+
+    .overview {
+        padding: 220px 0 220px 0;
+        background: #e91e63;
+    }
+
+    .foss {
+        color: orange;
+    }
+
+    .c-line {
+        color: #3298db;
+    }
+
+    .portfolio {
+        padding: 220px 0 220px 0;
+        background: #fff;
+    }
+
+    .black {
+        color: black;
+        transition: 750ms;
+    }
+
+    .header {
+        /*transition: 150ms ease-in-out;
+	transform: scale(6);*/
+        opacity: 0;
+    }
+
+    .login {
+        /*transition: 150ms ease-in-out;
+	transform: scale(6);*/
+        opacity: 0;
+    }
+
+    .subs {
+        /*transition: 150ms ease-in-out;
+	transform: scale(6);*/
+        opacity: 0;
+    }
+
+    .c-active {
+        transition: 1500ms ease-in-out;
+        transform: scale(1);
+        opacity: 1;
+    }
+
+
+    .body {
+        font-family: sans-serif;
+    }
+
+    .nav{
+        background: #000033;
+        width: 100%;
+        /*background: transparent;*/
+        height: 100px;
+        margin-top: 0px;
+    }
+
+    ul{
+        list-style:none;
+        padding:0;
+        margin:0;
+        position: absolute;
+    }
+
+    li{
+       float: left;
+       margin-top: 30px; 
+    }
+
+    a{
+
+        width: 150;
+        color: white;
+        display: block;
+        text-decoration:none;
+        font-size: 20px;
+        text-align:center;
+        padding: 10px;
+        border-radius: 10px;
+        font-family: Century Gothic;
+        font-weight: bold;
+    }
+
+
+
+    /*.nav-bar .nav-button-home a { background:url("https://www.cheesetoast.co.uk/cheesepress/wp-content/uploads/2012/08/home.gif") no-repeat 0px -2px transparent; }
+
+.nav-bar .nav-button-services a { background:url("https://www.cheesetoast.co.uk/cheesepress/wp-content/uploads/2012/08/services.gif") no-repeat 0px -2px transparent; }
+
+.nav-bar .nav-button-products a { background:url("https://www.cheesetoast.co.uk/cheesepress/wp-content/uploads/2012/08/products.gif") no-repeat 0px -2px transparent; }*/
+
+</style>
+<script type="text/javascript">
+    $(function() {
+        $('.rev1').hover(function() {
+            $('.rev1').toggleClass('orgasm')
+            // addClass, removeClass, toggleClass
+            // events: hover, mouseenter, mouseleave, click
+            // $('html, body').animate({scrollTop: $('.overview').offset().top}, 750)
+        })
+
+        setTimeout(function() {
+            $('.header').addClass('c-active')
+        }, 1000)
+
+        setTimeout(function() {
+            $('.login').addClass('c-active')
+        }, 1500)
+
+        setTimeout(function() {
+            $('.subs').addClass('c-active')
+        }, 1500)
+
+        $('.rev2').hover(function() {
+            $('.rev2').toggleClass('orgasm')
+            // addClass, removeClass, toggleClass
+            // events: hover, mouseenter, mouseleave, click
+            // $('html, body').animate({scrollTop: $('.overview').offset().top}, 750)
+        })
+
+        $('.arrow').click(function() {
+            $('html,body').animate({
+                scrollTop: $('.overview').offset().top
+            }, 750)
+        })
+
+        var h = $('.home').offset().top;
+        var o = $('.overview').offset().top;
+        var p = $('.portfolio').offset().top;
+
+        $(window).scroll(function() {
+            var y = $('html, body').scrollTop();
+            if (y >= o && y < p) {
+                console.log("Overview Section")
+            } else if (y > p) {
+                console.log("Portfolio Section")
+            } else {
+                console.log("Ghar ki baat pr ghar mei reh gayi")
+            }
+        })
+
+    })
+
+</script>
+
+<body>
+    <!-- Home Section -->
+
+    <div class="nav">
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li> 
+        <li><a href="#">Contact</a></li>    
+
+    </ul>        
+    </div>
+
+    <div class="home">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 text-center rev3 col-md-offset-4"><span class="header">kickass</span></div>
+                <br><br><br><br><br><br><br><br><br><br>
+                <div class="col-md-2 text-center rev1 col-md-offset-3"><span class="login">LOG IN</span></div>
+                <div class="col-md-2 text-center rev2 col-md-offset-2"><span class="subs">SIGN IN</span></div>
+            </div>
+        </div>
+        <br><br><br><br><br><br>
+        <center>
+            <div class="arrow"></div>
+        </center>
+    </div>
+    <!-- About Me Section -->
+    <div class="overview">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-md-offset-4">
+                    <center><img src="bird.jpg" class="img-circle img-responsive" width="242" height="242"></center>
+                </div>
+            </div>
+            <br><br>
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2 text-center">
+                    <br><br>I&apos;m a tech enthusiast, a frontend designer and a backend developer to be specific. I love working on new exciting projects.
+                    <br><br>Open Source is something really fun. Recently, I started contributing to <span class="foss">Coala</span>.
+                    <br><br>I am currently working on Django specific applications. Interested in working together&#63; Just drop me a <span class="c-line">line</span>.
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Portfolio Section -->
+    <div class="portfolio">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-md-offset-4 text-center portfolio-title">Portfolio</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
