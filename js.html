@@ -17,7 +17,7 @@
     }
 
     .rev3 {
-        font-family: 'Product sans', sans-serif;
+        font-family: 'Raleway', sans-serif;
         font-size: 70px;
         cursor: pointer;
         padding-left: 20px;
@@ -74,9 +74,15 @@
         cursor: pointer;
     }
 
-    .overview {
+    .overview {				/*update 16/01/19*/
         padding: 220px 0 220px 0;
-        background: #e91e63;
+       /* background: #ffff;*/
+        transition: background-color 0.5s ease;
+  background-color: #000000;
+    }
+   .over{			/*update 16/01/19*/
+  background-color: #ffffff;
+}
     }
 
     .foss {
@@ -127,13 +133,18 @@
     }
 
     .nav{
-        background: #000033;
+        background: black;
         width: 100%;
         /*background: transparent;*/
-        height: 100px;
+        height: 60px;
+        position: fixed;
+        opacity:0.6;
         margin-top: 0px;
     }
-
+    li:hover{				/*update 16/01/19*/
+    	transition: transform .2s;
+    	transform: scale(1.2);
+    }
     ul{
         list-style:none;
         padding:0;
@@ -143,24 +154,32 @@
 
     li{
        float: left;
-       margin-top: 30px; 
+       margin-top: 10px; 
     }
 
-    a{
-
+    a{	
         width: 150;
-        color: white;
+        color: #ffff;
         display: block;
-        text-decoration:none;
+        text-decoration: none !important;
         font-size: 20px;
         text-align:center;
         padding: 10px;
         border-radius: 10px;
-        font-family: Century Gothic;
+        font-family: Raleway;
         font-weight: bold;
     }
-
-
+    .img-circle{				/*update 16/01/19*/
+    	box-shadow:         3px 3px 5px 6px rgba(0, 0, 0, 0.4);
+    }
+    .img-circle:hover{			/*update 16/01/19*/
+    	transition: transform .2s;
+    	transform: scale(1.2);
+    }
+    .para{						/*update 16/01/19*/
+    	font-size: 15px;
+    }
+ 
 
     /*.nav-bar .nav-button-home a { background:url("https://www.cheesetoast.co.uk/cheesepress/wp-content/uploads/2012/08/home.gif") no-repeat 0px -2px transparent; }
 
@@ -177,6 +196,9 @@
             // events: hover, mouseenter, mouseleave, click
             // $('html, body').animate({scrollTop: $('.overview').offset().top}, 750)
         })
+
+        
+  
 
         setTimeout(function() {
             $('.header').addClass('c-active')
@@ -210,7 +232,8 @@
         $(window).scroll(function() {
             var y = $('html, body').scrollTop();
             if (y >= o && y < p) {
-                console.log("Overview Section")
+                /*console.log("Overview Section")*/
+                $('.overview').addClass('over');
             } else if (y > p) {
                 console.log("Portfolio Section")
             } else {
@@ -227,7 +250,7 @@
 
     <div class="nav">
     <ul>
-        <li><a href="#">Home</a></li>
+        <li><a href="#"><div class="homie">Home</div></a></li>
         <li><a href="#">About</a></li> 
         <li><a href="#">Contact</a></li>    
 
@@ -253,12 +276,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4 col-md-offset-4">
-                    <center><img src="bird.jpg" class="img-circle img-responsive" width="242" height="242"></center>
+                    <center><img src="dumbbell-logo-png-2.png" class="img-circle img-responsive" width="242" height="242"></center>
                 </div>
             </div>
             <br><br>
             <div class="row">
-                <div class="col-md-8 col-md-offset-2 text-center">
+                <div class="col-md-8 col-md-offset-2 text-center para">
                     <br><br>I&apos;m a tech enthusiast, a frontend designer and a backend developer to be specific. I love working on new exciting projects.
                     <br><br>Open Source is something really fun. Recently, I started contributing to <span class="foss">Coala</span>.
                     <br><br>I am currently working on Django specific applications. Interested in working together&#63; Just drop me a <span class="c-line">line</span>.
@@ -267,6 +290,7 @@
         </div>
     </div>
     <!-- Portfolio Section -->
+
     <div class="portfolio">
         <div class="container">
             <div class="row">
